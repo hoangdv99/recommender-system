@@ -1,4 +1,3 @@
-from pandas import DatetimeIndex
 from sqlalchemy import Column, Integer, String, DECIMAL, Text, SmallInteger, DateTime
 from database import Base
 
