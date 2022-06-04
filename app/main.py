@@ -1,11 +1,9 @@
-from email.mime import audio
 from fastapi import FastAPI
-from routers import audios, ratings
+from routers import predict
 
 app = FastAPI()
 
-app.include_router(audios.router)
-app.include_router(ratings.router)
+app.include_router(predict.router)
 
 @app.get("/helloworld")
 def helloworld():
