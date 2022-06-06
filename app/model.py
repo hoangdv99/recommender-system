@@ -87,7 +87,6 @@ class CF(object):
         have not been rated by u yet. 
         """
         ids = np.where(self.Y_data[:, 0] == u)[0]
-        print(ids)
         items_rated_by_u = self.Y_data[ids, 1].tolist()              
         recommended_items = []
         for i in range(self.n_items):

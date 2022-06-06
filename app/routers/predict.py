@@ -3,6 +3,8 @@ from model import CF
 import pandas as pd
 from models.ratings import get_rating_histories
 from models.audios import get_audio_by_id
+from fastapi.encoders import jsonable_encoder
+from fastapi.responses import JSONResponse
 
 router = APIRouter()
 
@@ -18,4 +20,6 @@ async def get_recommend_audios(user_id: int):
   for id in recommend_id_list:
     audio = await get_audio_by_id(id)
     recommend_audio_list.append(audio)
-  return recommend_audio_list
+  json_compatible_data = jsonable_encoder(recommend_audio_list)
+
+  return JSONResponse(content=json_compatible_data)
