@@ -13,7 +13,7 @@ steps:
 
   # this builds app docker image
   - id: 'build-app-image'
-    name: 'gcr.io/cloud-builders/gcloud'
+    name: 'gcr.io/kaniko-project/executor:v1.6.0'
     args:
       - --dockerfile=${_APP_DOCKER_FILE}
       - --destination=gcr.io/${PROJECT_ID}/${_ENV}-${_CLOUD_RUN_SERVICE_NAME}:latest

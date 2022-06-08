@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer
-from database import Base, get_db
+from app.database import Base, get_db
 from sqlalchemy.orm import Session
 
 class RatingHistories(Base):
