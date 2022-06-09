@@ -48,6 +48,7 @@ class CF(object):
         self.Ybar = self.Ybar.tocsr()
 
     def similarity(self):
+        eps = 1e-6
         self.S = self.dist_func(self.Ybar.T, self.Ybar.T)
     
     def refresh(self):
