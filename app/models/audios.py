@@ -1,3 +1,4 @@
+from array import array
 from sqlalchemy import Column, Integer, String, DECIMAL, Text, SmallInteger, DateTime
 from app.database import Base, get_db
 from sqlalchemy.orm import Session
@@ -22,5 +23,5 @@ class Audios(Base):
   created_at = Column(DateTime)
   updated_at = Column(DateTime)
 
-async def get_audio_by_id(id: int, db: Session = next(get_db())):
-  return db.query(Audios).get(id)
+async def get_audios_by_ids(ids: array, db: Session = next(get_db())):
+  return db.query(Audios).filter(Audios.id.in_(ids)).all()
