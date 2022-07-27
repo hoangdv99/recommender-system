@@ -5,7 +5,8 @@ from starlette.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "https://staging-bkradio-fe-6xoiukrslq-an.a.run.app"
+    "https://staging-bkradio-fe-6xoiukrslq-an.a.run.app",
+    "https://bkradio.app"
 ]
 
 app.add_middleware(
